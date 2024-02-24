@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,6 +104,9 @@ public class ImageAdapter extends BaseAdapter {
             images[emptyPosition] = temp;
             emptyPosition = position;
             notifyDataSetChanged(); // Notificar al adaptador sobre el cambio en los datos
+            MediaPlayer mediaPlayer = MediaPlayer.create(context.getApplicationContext(), R.raw.keyboard);
+            mediaPlayer.setVolume(200,200);
+            mediaPlayer.start();
     }
 
 }
