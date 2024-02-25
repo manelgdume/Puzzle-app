@@ -18,9 +18,11 @@
 
     <!-- Botones de opciones del menú -->
     <LinearLayout
+        android:id="@+id/optionButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <Button
@@ -33,32 +35,17 @@
             android:background="#03A9F4"
             android:text="Jugar"
             android:textColor="@android:color/white"
-            android:textColorLink="#FFFFFF"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btnSettings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="20dp"
-            android:background="#03A9F4"
-            android:text="Configuración"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btnExit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="#03A9F4"
-            android:text="Salir"
-            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
     </LinearLayout>
+
+    <!-- Tabla -->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/optionButtonsLayout"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
 
 </RelativeLayout>
