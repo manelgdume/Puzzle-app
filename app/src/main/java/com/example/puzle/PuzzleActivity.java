@@ -55,10 +55,11 @@ public class PuzzleActivity extends AppCompatActivity {
             try{
                 Intent intent = new Intent(PuzzleActivity.this, AudioIntentService.class);
                 if (isChecked) {
-                    intent.putExtra("operacio", "inici");
+                    intent.setAction("inici");
                 } else {
-                    intent.putExtra("operacio", "pausa");
+                    intent.setAction("pausa");
                 }
+
                 startService(intent);
             }catch (Exception e){
                 Log.d("TAG", String.valueOf(e));
