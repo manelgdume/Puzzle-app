@@ -2,6 +2,8 @@ package com.example.puzle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btnPlay = findViewById(R.id.btnPlay);
+        Button btnExit = findViewById(R.id.btnExit);
         camera = new Camera(this);
 
         Button btnCamera = findViewById(R.id.btnCamera);
@@ -37,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,PuzzleActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
