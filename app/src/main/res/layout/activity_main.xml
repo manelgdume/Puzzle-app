@@ -18,9 +18,11 @@
 
     <!-- Botones de opciones del menú -->
     <LinearLayout
+        android:id="@+id/optionButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <Button
@@ -60,5 +62,14 @@
             android:textSize="20sp" />
 
     </LinearLayout>
+
+    <!-- Tabla -->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/optionButtonsLayout"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
 
 </RelativeLayout>

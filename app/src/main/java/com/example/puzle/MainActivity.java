@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     Camera camera;
 
+    private BD bd = new BD();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 camera.takePicture();
             }
         });
+        TableLayout tableLayout = findViewById(R.id.tableLayout);
+        bd.getResults(tableLayout,this);
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,4 +45,5 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         camera.onActivityResult(requestCode, resultCode, data);
     }
+
 }
