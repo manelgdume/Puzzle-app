@@ -3,10 +3,15 @@ package com.example.puzle;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,8 +30,8 @@ public class PuzzleActivity extends AppCompatActivity {
     private static Bitmap[] chunkedImages;
     private static ArrayList<Button> buttons;
     private ImageAdapter adapter;
+    private ImageView backArrow;
     private Game game;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +39,33 @@ public class PuzzleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_puzzle);
         init();
         shuffle();
-        setBitmaps();
+        setBitmaps();;
         setButtonClickListener();
+        backArrow = findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PuzzleActivity.this, MainActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+        Switch swMusic = findViewById(R.id.swMusica);
+        swMusic.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            try{
+                Intent intent = new Intent(PuzzleActivity.this, AudioIntentService.class);
+                if (isChecked) {
+                    intent.setAction("inici");
+                } else {
+                    intent.setAction("pausa");
+                }
+
+                startService(intent);
+            }catch (Exception e){
+                Log.d("TAG", String.valueOf(e));
+            }
+        });
+
     }
     //  Start the game and get the images
     private void init() {
@@ -105,6 +135,9 @@ public class PuzzleActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
+
 
 }

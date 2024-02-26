@@ -35,6 +35,30 @@
             android:background="#03A9F4"
             android:text="Jugar"
             android:textColor="@android:color/white"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="#03A9F4"
+            android:text="Camara"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="#03A9F4"
+            android:text="Salir"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
     </LinearLayout>
