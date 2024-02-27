@@ -23,7 +23,6 @@ public class Camera {
     public void takePicture() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         activity.startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        Toast.makeText(activity, "No se pudo abrir la cámara", Toast.LENGTH_SHORT).show();
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -33,8 +32,6 @@ public class Camera {
             imageCamera = imgBitmap;
         }
     }
-
-
     public Bitmap getImageCamera() {
         return imageCamera;
     }
