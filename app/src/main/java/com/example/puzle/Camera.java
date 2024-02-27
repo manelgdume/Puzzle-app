@@ -30,32 +30,10 @@ public class Camera {
         Log.d("TAG", "onActivityResult");
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-            if (extras != null) {
-                Log.d("TAG", "img is NOT null ");
-                Bitmap imgBitmap = (Bitmap) extras.get("data");
-                imageCamera = imgBitmap;
-                // Notificar al listener (si está definido) que la imagen ha sido capturada
-                if (onImageCapturedListener != null) {
-                    onImageCapturedListener.onImageCaptured(imageCamera);
-                }
-            } else {
-                Log.d("TAG", "img is null ");
-            }
+            Bitmap imgBitmap = (Bitmap) extras.get("data");
+            imageCamera = imgBitmap;
         }
     }
-
-    // Interfaz para el listener
-    public interface OnImageCapturedListener {
-        void onImageCaptured(Bitmap image);
-    }
-
-    private OnImageCapturedListener onImageCapturedListener;
-
-    // Método para establecer el listener
-    public void setOnImageCapturedListener(OnImageCapturedListener listener) {
-        this.onImageCapturedListener = listener;
-    }
-
     public Bitmap getImageCamera() {
        return imageCamera;
     }

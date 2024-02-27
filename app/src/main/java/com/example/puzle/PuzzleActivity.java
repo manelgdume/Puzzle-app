@@ -32,6 +32,7 @@ public class PuzzleActivity extends AppCompatActivity {
     private ImageAdapter adapter;
     private ImageView backArrow;
     private Game game;
+    Camera camera;
 
 
     @Override
@@ -43,6 +44,7 @@ public class PuzzleActivity extends AppCompatActivity {
         setBitmaps();;
         setButtonClickListener();
         backArrow = findViewById(R.id.backArrow);
+        camera = new Camera(this);
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +76,7 @@ public class PuzzleActivity extends AppCompatActivity {
         chunkedImages = new Bitmap[DIMENSIONS];
 
         Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.ironman);
+        //Bitmap image = camera.getImageCamera();
 
         int chunkWidth = image.getWidth() / COLUMNS;
         int chunkHeight = image.getHeight() / COLUMNS;
