@@ -33,6 +33,7 @@ public class PuzzleActivity extends AppCompatActivity {
     private ImageView backArrow;
     private Game game;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,9 +136,5 @@ public class PuzzleActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
-
-
 }

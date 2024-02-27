@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                camera.takePicture();
+                Intent intent = new Intent(MainActivity.this,CamaraActivity.class);
+                startActivity(intent);
             }
         });
         TableLayout tableLayout = findViewById(R.id.tableLayout);
